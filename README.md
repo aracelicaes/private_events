@@ -1,0 +1,1 @@
+Similar to Eventbrite.com we built a Rails app where you can create private events and manage their user sign ups. 
