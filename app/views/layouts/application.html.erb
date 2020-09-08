@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <%= display_propper_flash %>
     <%= yield %>
+    <% unless current_user %>
+      <%= "Logged in as #{session[:name]}" %>
+      <%= link_to "(logout)", logout_path %>
+    <% else %>
+      <%= link_to "(login)", login_path %>
+    <% end %>
   </body>
 </html>
