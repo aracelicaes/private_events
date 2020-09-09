@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  include UserSessionsHelper
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events
@@ -24,7 +25,8 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
+    @current_user = current_user
+    @event = @current_user.events.build(event_params)
 
     respond_to do |format|
       if @event.save
@@ -69,6 +71,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:date, :location, :description)
+      params.require(:event).permit(:title, :date, :location, :description)
     end
 end
