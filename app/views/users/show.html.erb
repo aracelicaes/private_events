@@ -20,6 +20,7 @@
   </thead>
 
   <tbody>
+  <% unless @user_events.nil? %>
     <% @user_events.each do |event| %>
       <tr>
         <td><%= event.title %></td>
@@ -28,6 +29,7 @@
         <td><%= link_to 'Show', event %></td>
       </tr>
     <% end %>
+  <% end %>
   </tbody>
 </table>
 
