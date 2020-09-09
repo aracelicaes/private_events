@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include UserSessionsHelper
   before_action :set_user, only: [:show, :edit]
 
   # GET /users

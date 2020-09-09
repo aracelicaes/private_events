@@ -1,4 +1,5 @@
 class UserSessionsController < ApplicationController
+  include UserSessionsHelper
   def new
   end
 

@@ -1,4 +1,5 @@
 module UserSessionsHelper
+  
   def logout
     session.destroy
   end
