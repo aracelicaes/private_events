@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   get 'login' => 'user_sessions#new'
   get 'logout' => 'user_sessions#destroy'
-  get '/buy/:user_id/:event_id', to: 'attendances#buy'
+  get '/buy/:event_id', to: 'attendances#buy'
 end

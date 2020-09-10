@@ -1,22 +1,16 @@
 class AttendancesController < ApplicationController
+  include UserSessionsHelper
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
 
-  # GET /attendances
-  # GET /attendances.json
   def index
     @attendances = Attendance.all
   end
 
-  # GET/attendances/buy/:user_id/:event_id
+  # GET/attendances/buy/:event_id
   def buy
-    # crear un attendance nuevo con los parametros que le pasamos a la ruta
-    @buy = Attendance.new
-    @buy.user_id = params[:user_id] # it'll correspond to the one that's in the routes file
-    @buy.event_id = params[:event_id]
-    @current_event = Event.find_by_id(params[:event_id])
-    # necesitamos una validacion de que si se guardo bien nos lo haga saber
-    
-    if @buy.save
+    event = Event.find(params[:event_id])
+    event.attendances.build(user_id: current_user.id)
+    if event.save
       redirect_to events_path
     else
       redirect_to event_path(@current_event)

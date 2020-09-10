@@ -12,6 +12,7 @@
   <body>
     <%= display_propper_flash %>
     <%= yield %>
+    <br>
     <% unless current_user.nil? %>
       <%= "Logged in as #{session[:name]}" %>
       <%= link_to "(logout)", logout_path %>
