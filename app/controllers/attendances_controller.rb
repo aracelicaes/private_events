@@ -7,6 +7,23 @@ class AttendancesController < ApplicationController
     @attendances = Attendance.all
   end
 
+  # GET/attendances/buy/:user_id/:event_id
+  def buy
+    # crear un attendance nuevo con los parametros que le pasamos a la ruta
+    @buy = Attendance.new
+    @buy.user_id = params[:user_id] # it'll correspond to the one that's in the routes file
+    @buy.event_id = params[:event_id]
+    @current_event = Event.find_by_id(params[:event_id])
+    # necesitamos una validacion de que si se guardo bien nos lo haga saber
+    
+    if @buy.save
+      redirect_to events_path
+    else
+      redirect_to event_path(@current_event)
+    end
+
+  end
+
   # GET /attendances/1
   # GET /attendances/1.json
   def show
@@ -14,7 +31,9 @@ class AttendancesController < ApplicationController
 
   # GET /attendances/new
   def new
-    @attendance = Attendance.new
+    # @attendance = Attendance.new
+    # @attendance.user_id = current_user.id
+    # attendance.event_id = @event.id
   end
 
   # GET /attendances/1/edit

@@ -20,7 +20,7 @@
   <%= @event.description %>
 </p>
 
-<%= link_to 'prueba', prueba(@event) %>
+<%= link_to 'BUY', "/buy/#{current_user.id}/#{@event.id}" %>
 <br>
 
 
