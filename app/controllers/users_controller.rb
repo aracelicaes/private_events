@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   include UserSessionsHelper
-  before_action :set_user, only: [:show, :edit]
+  before_action :set_user, only: %i[show edit]
 
   # GET /users
   # GET /users.json
@@ -12,8 +12,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    user = User.find(params[:id]) #Encontramos usuario
-    @user_events = user.events unless user.nil? #Toda la lsita de eventos del usuario show
+    user = User.find(params[:id]) # Encontramos usuario
+    @user_events = user.events unless user.nil? # Toda la lsita de eventos del usuario show
     @user_attended = user.attended_events
     @upcoming_events = @user_attended.upcoming_events
     @past_events = @user_attended.past_events
@@ -69,13 +69,14 @@ class UsersController < ApplicationController
   # end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:name, :username)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def user_params
+    params.require(:user).permit(:name, :username)
+  end
 end

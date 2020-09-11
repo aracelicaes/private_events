@@ -22,13 +22,18 @@ body, p, ol, ul, td {
   background-color: #1e0a3c;
 }
     
-.logo, .white_fa {
+.logo, .bars {
     color: orangered;
     font-size: 24px;
 }
 
 .events {
-  color: white
+  color: white;
+  font-size: 28px;
+}
+
+small {
+  color: white;
 }
 
 pre {

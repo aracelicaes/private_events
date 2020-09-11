@@ -3,11 +3,3 @@
 <div class="row">
   <%= displaylist_user(@users) %>
 </div>
-
-<%= link_to 'New User', new_user_path %>
-<br>
-<% if current_user? %>
-  <%= link_to 'New Event', new_event_path %>
-<% end %>
-<br>
-<%= link_to 'View All events', events_path %>

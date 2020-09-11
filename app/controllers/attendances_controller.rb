@@ -1,6 +1,6 @@
 class AttendancesController < ApplicationController
   include UserSessionsHelper
-  before_action :set_attendance, only: [:show, :edit, :update, :destroy]
+  before_action :set_attendance, only: %i[show edit update destroy]
 
   def index
     @attendances = Attendance.all
@@ -26,13 +26,11 @@ class AttendancesController < ApplicationController
         format.json { render json: @attendance.errors, status: :unprocessable_entity }
       end
     end
-
   end
 
   # GET /attendances/1
   # GET /attendances/1.json
-  def show
-  end
+  def show; end
 
   # GET /attendances/new
   def new
@@ -42,8 +40,7 @@ class AttendancesController < ApplicationController
   end
 
   # GET /attendances/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /attendances
   # POST /attendances.json
@@ -86,13 +83,14 @@ class AttendancesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_attendance
-      @attendance = Attendance.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def attendance_params
-      params.require(:attendance).permit(:user_id, :event_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_attendance
+    @attendance = Attendance.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def attendance_params
+    params.require(:attendance).permit(:user_id, :event_id)
+  end
 end
