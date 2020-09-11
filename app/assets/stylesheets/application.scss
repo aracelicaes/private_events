@@ -1,59 +1,40 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
 @import "bootstrap";
-
-.regina_color {
-   color:rgba(84, 141, 179, 0.438); 
-}
+@import "font-awesome";
 
 body {
   background-color: #fff;
   color: #333;
-  margin: 33px; }
+  margin: 33px; 
+}
 
+h1, h2, h3, h4, h5, h6, .logo {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 700;
+}
+  
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px; }
+  line-height: 18px;
+}
+
+.navcolor {
+  background-color: #1e0a3c;
+}
+    
+.logo, .white_fa {
+    color: orangered;
+    font-size: 24px;
+}
+
+.events {
+  color: white
+}
 
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px; }
-
-a {
-  color: #000; }
-
-a:visited {
-  color: #666; }
-
-a:hover {
-  color: #fff;
-  background-color: #000; }
-
-th {
-  padding-bottom: 5px; }
-
-td {
-  padding: 0 5px 7px; }
-
-div.field,
-div.actions {
-  margin-bottom: 10px; }
 
 #notice {
   color: green; }
@@ -86,11 +67,3 @@ div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square; }
-
-label {
-  display: block; }
-
-
-.gbc {
-  background-color: rgb(125, 204, 125);
-}
