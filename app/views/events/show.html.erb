@@ -17,13 +17,11 @@
   <strong>Description:</strong>
   <%= @event.description %>
 </p>
+<h1>Attendees:</h1>
+<div class="row">
 
-<p>
-  <strong>Attendees:</strong>
-  <% @event_attendees.each do |attendee| %>
-    <%= attendee.name %>
-  <% end %>
-</p>
+  <%= displaylist_user(@event_attendees) %>
+</div>
 
 <%= link_to 'BUY', "/buy/#{@event.id}" %>
 <br>
