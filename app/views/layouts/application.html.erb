@@ -6,24 +6,30 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= display_propper_flash %>
-    <nav class="navbar navbar-expand-lg navbar-light regina_color">      
-      <div>
-        <h3>Private Events</h3>
+    <nav class="navbar navbar-expand-lg navbar-light navcolor">      
+      <div class = "logo">
+        <%= link_to 'eventoprivato', root_path, class: "logo" %>
       </div>
       
+      <!-- Toggle Menu -->
       <div class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>   
+        <i class="fa fa-bars white_fa"></i>
       </div>
+      <!-- End Toggle Menu -->
 
       <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <p><%= link_to  "All Events", events_path, class: "button is-info ml-3 mr-3" %></p>    
+          <p>
+          <%= link_to events_path, class: "button is-info ml-3 mr-3" do %>
+            <i class="fa fa-bars white_fa"></i>
+          <% end %>
+          </p>    
         </div>
       </div>
     </nav>
