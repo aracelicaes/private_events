@@ -12,9 +12,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    user = User.find(params[:id])
-    @user_events = user.events unless user.nil?
+    user = User.find(params[:id]) #Encontramos usuario
+    @user_events = user.events unless user.nil? #Toda la lsita de eventos del usuario show
     @user_attended = user.attended_events
+    @upcoming_events = @user_attended.upcoming_events
+    @past_events = @user_attended.past_events
   end
 
   # GET /users/new
