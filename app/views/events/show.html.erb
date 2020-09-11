@@ -18,6 +18,13 @@
   <%= @event.description %>
 </p>
 
+<p>
+  <strong>Attendees:</strong>
+  <% @event_attendees.each do |attendee| %>
+    <%= attendee.name %>
+  <% end %>
+</p>
+
 <%= link_to 'BUY', "/buy/#{@event.id}" %>
 <br>
 
