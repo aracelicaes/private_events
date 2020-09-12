@@ -1,10 +1,10 @@
 <!-- PROJECT LOGO -->
-# The Burn Book: Members Only
+# Private Events: Evento Privato
 This Project is an app built using Ruby on Rails meant to mimick the functionality of Eventbrite. This rails app was built to implement the creation of Private Events a Web app where you can create an event, "buy" your attendance for an event while being signed in by simply using your username.
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
-- [The Burn Book: Members Only](#the-burn-book-members-only)
+- [Private Events: EventoPrivato](#private-events-evento-privato)
   - [Table of Contents](#table-of-contents)
 - [About The Project](#about-the-project)
 - [Getting started](#getting-started)
