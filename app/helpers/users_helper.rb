@@ -9,7 +9,7 @@ module UsersHelper
           content_tag(:div) do
             link_to image_tag('woman.jpg', alt: 'Logo', class: 'w-100'), user
           end +
-            content_tag(:p) do
+            content_tag(:h3, class: 'blue') do
               user.username.to_s
             end
         end

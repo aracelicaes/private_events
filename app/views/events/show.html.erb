@@ -1,31 +1,38 @@
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+<% content_for :section do %>
+  <div class="d-flex">
+    <%= link_to 'Edit', edit_event_path(@event), class: 'fa fa-pencil purple event_title mr-2' %>
+    <br>
+    <%= link_to 'Back', root_path, class: 'fa fa-arrow-left purple event_title mr-2' %>
+    <br>
+    <%= link_to 'Buy', "/buy/#{@event.id}", class: 'fa fa-check purple event_title mr-2' %>
+  </div>
+  <br>
+  <br>
+  <h3>
+    <strong>Title:</strong>
+    <%= @event.title %>
+  </h3>
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+  <h3>
+    <strong>Date:</strong>
+    <%= @event.date %>
+  </h3>
 
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
+  <h3>
+    <strong>Location:</strong>
+    <%= @event.location %>
+  </h3>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-<h1>Attendees:</h1>
-<div class="row">
+  <h3>
+    <strong>Description:</strong>
+    <%= @event.description %>
+  </h3>
+  <br>
+  <br>
+  <h2 class="orange">Attendees:</h2>
+  <div class="row">
 
-  <%= displaylist_user(@event_attendees) %>
-</div>
+    <%= displaylist_user(@event_attendees) %>
+  </div>
 
-<%= link_to 'BUY', "/buy/#{@event.id}" %>
-<br>
-
-
-<%= link_to 'Edit', edit_event_path(@event) %>
-<%= link_to 'Back', root_path %>
+<% end %>

@@ -9,8 +9,11 @@ module EventsHelper
           content_tag(:div) do
             link_to image_tag('event.jpeg', alt: 'Logo', class: 'w-100'), event
           end +
-            content_tag(:p) do
-              "#{event.title} #{event.date}"
+            content_tag(:p, class: 'orange event_title') do
+              "#{event.date}"
+            end +
+            content_tag(:p, class: 'event_title') do
+              "#{event.title}"
             end
         end
     end

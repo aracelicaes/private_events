@@ -1,5 +1,9 @@
-<h1>Users</h1>
+<% content_for :section do %>
+  <div class="d-flex flex-column">
+    <h2>Users</h2>
 
-<div class="row">
-  <%= displaylist_user(@users) %>
-</div>
+    <div claspaths="row">
+      <%= displaylist_user(@users) %>
+    </div>
+  </div>
+<% end %>

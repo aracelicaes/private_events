@@ -11,10 +11,29 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light navcolor">      
+      <div class = "logo">
+        <%= link_to 'eventoprivato', root_path, class: "logo" %>
+      </div>
+      
+      <!-- Toggle Menu -->
+      <div class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars bars"></i>
+      </div>
+      <!-- End Toggle Menu -->
+
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+        <!-- New Event Icon -->
+          <%= login_helper %>
+          
+        </div>
+      </div>
+    </nav>
     <%= display_propper_flash %>
-    
-    <br>
-    <%= login_helper %>
+    <section class="content">
+    <%= yield :section %>
+    </section>
     <%= yield %>
     
   </body>

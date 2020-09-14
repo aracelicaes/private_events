@@ -4,7 +4,8 @@
 body {
   background-color: #fff;
   color: #333;
-  margin: 33px;
+  margin: 0 auto;
+  max-width: 100%;
 }
 
 h1,
@@ -36,6 +37,25 @@ td {
 .bars {
   color: orangered;
   font-size: 24px;
+}
+
+.orange {
+  color: orangered !important;
+}
+
+.blue {
+  color: blue !important;
+}
+
+.purple {
+  color: purple !important;
+}
+
+.event_title {
+  color: rgb(15, 15, 15);
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 0.5rem;
 }
 
 .events {
@@ -88,4 +108,9 @@ pre {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+.content {
+  margin: 2% auto;
+  max-width: 75%;
 }
