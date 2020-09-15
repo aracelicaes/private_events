@@ -36,7 +36,7 @@ class EventsController < ApplicationController
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
-        format.html { render :new, alert: 'Please Sign In.' }
+        format.html { redirect_to events_path, notice: 'Please Sign In.' }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
