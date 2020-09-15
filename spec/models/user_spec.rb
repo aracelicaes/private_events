@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   
 
-  describe '#Validation' do
+  describe '#User Validations' do
     let (:user) {User.new}
 
     it 'Validate the name and username of user' do

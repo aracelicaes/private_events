@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Event, type: :model do
 
-  describe 'Validate' do
+  describe '#Event Validations' do
     let (:user) {User.new(name: 'name', username: 'username', id: 3)}
     let (:event_1) {Event.new(title: 'Independencia')}
     
