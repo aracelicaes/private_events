@@ -1,39 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  
 
-  describe '#User Validations' do
-    let (:user) {User.new}
+  describe '#Validations' do
 
-    it 'Validate the name and username of user' do
-      user.name = 'name'
-      user.username = 'username'
-      expect(user.valid?).to be true
+    it 'Valid User with all atributes' do
+      expect(User.new(name: 'name', username: 'username')).to be_valid
     end
 
-    it 'Invalid nil name for user' do
-      user.name = nil
-      user.username = 'username'
-      expect(user.valid?).to be false
+    it 'Invalid user due to nil name' do
+      expect(User.new(name: nil, username: 'username')).to_not be_valid
     end
 
-    it 'Invalid nil username for user' do
-      user.name = 'name'
-      user.username = nil
-      expect(user.valid?).to be false
+    it 'Invalid user due to nil username' do
+      expect(User.new(name: 'name', username: nil)).to_not be_valid
     end
 
-    it 'Invalid username size too short' do
-      user.name = 'name'
-      user.username = 'one'
-      expect(user.valid?).to be false
+    it 'Invalid user due to short username' do
+      expect(User.new(name: 'name', username: 'nil')).to_not be_valid
     end
 
-    it 'Invalid username size too long' do
-      user.name = 'name'
-      user.username = 'username_too_long'
-      expect(user.valid?).to be false
+    it 'Invalid user due to long username' do
+      expect(User.new(name: 'name', username: 'usernameistoolong')).to_not be_valid
     end
   end
 end
