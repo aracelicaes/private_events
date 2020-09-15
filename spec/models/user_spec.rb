@@ -35,7 +35,7 @@ RSpec.describe User, type: :model do
       expect(association.macro).to eq(:has_many)
     end
 
-    it 'user has many atteded_events' do
+    it 'user has many attended_events' do
       association = User.reflect_on_association(:attended_events)
       expect(association.macro).to eq(:has_many)
     end
