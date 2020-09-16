@@ -1,22 +1,23 @@
 <!-- PROJECT LOGO -->
 # Private Events: Evento Privato
-This Project is an app built using Ruby on Rails meant to mimick the functionality of Eventbrite. This rails app was built to implement the creation of Private Events a Web app where you can create an event, "buy" your attendance for an event while being signed in by simply using your username.
+This Project is an app built using Ruby on Rails meant to mimick the functionality of Eventbrite. This rails app was built to implement the creation of Private Events a Web app where you can create an event, "attend" your attendance for an event while being signed in by simply using your username.
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
-- [Private Events: EventoPrivato](#private-events-evento-privato)
+- [Private Events: Evento Privato](#private-events-evento-privato)
   - [Table of Contents](#table-of-contents)
 - [About The Project](#about-the-project)
 - [Getting started](#getting-started)
   - [Installation](#installation)
   - [Features:](#features)
+  - [Testing](#testing)
   - [Ruby Gems used in this project](#ruby-gems-used-in-this-project)
 - [Authors](#authors)
 - [Acknowledgements](#acknowledgements)
   - [Show your support](#show-your-support)
 <!-- ABOUT THE PROJECT -->
 # About The Project
-This Project is an app built using Ruby on Rails meant to mimick the functionality of Eventbrite. This rails app was built to implement the creation of Private Events a Web app where you can create an event, "buy" your attendance for an event while being signed in by simply using your username.
+This Project is an app built using Ruby on Rails meant to mimick the functionality of Eventbrite. This rails app was built to implement the creation of Private Events a Web app where you can create an event, "attend" your attendance for an event while being signed in by simply using your username.
 This project demonstrates a User Role system giving the web application and native application feel all within the browser. We used Rails generators to help scaffold views. The app features the CRUD principle where we create & read Events.
 
 ![screenshot](events.png)

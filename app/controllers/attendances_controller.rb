@@ -6,7 +6,7 @@ class AttendancesController < ApplicationController
     @attendances = Attendance.all
   end
 
-  def buy
+  def attend
     event = Event.find(params[:event_id])
 
     respond_to do |format|
