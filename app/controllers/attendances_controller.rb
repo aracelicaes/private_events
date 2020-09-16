@@ -6,15 +6,9 @@ class AttendancesController < ApplicationController
     @attendances = Attendance.all
   end
 
-  # GET/attendances/buy/:event_id
   def buy
     event = Event.find(params[:event_id])
 
-    # unless current_user.nil?
-    # event.attendances.build(user_id: current_user.id)
-    # else
-    #   redirect_to event_path(event)
-    # end
     respond_to do |format|
       if current_user?
         event.attendances.build(user_id: current_user.id)
@@ -28,22 +22,6 @@ class AttendancesController < ApplicationController
     end
   end
 
-  # GET /attendances/1
-  # GET /attendances/1.json
-  def show; end
-
-  # GET /attendances/new
-  def new
-    # @attendance = Attendance.new
-    # @attendance.user_id = current_user.id
-    # attendance.event_id = @event.id
-  end
-
-  # GET /attendances/1/edit
-  def edit; end
-
-  # POST /attendances
-  # POST /attendances.json
   def create
     @attendance = Attendance.new(attendance_params)
 
@@ -58,8 +36,6 @@ class AttendancesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /attendances/1
-  # PATCH/PUT /attendances/1.json
   def update
     respond_to do |format|
       if @attendance.update(attendance_params)
@@ -72,8 +48,6 @@ class AttendancesController < ApplicationController
     end
   end
 
-  # DELETE /attendances/1
-  # DELETE /attendances/1.json
   def destroy
     @attendance.destroy
     respond_to do |format|
@@ -84,12 +58,10 @@ class AttendancesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_attendance
     @attendance = Attendance.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def attendance_params
     params.require(:attendance).permit(:user_id, :event_id)
   end

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Attendance, type: :model do
-  # Validates 2 foreign keys(user_id, event_id) and 2 belongs_to (:user, :event)
   context '#Associations' do
     it 'Attendance has a foreign_key from user_id' do
       association = Attendance.reflect_on_association(:user)
