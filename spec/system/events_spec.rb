@@ -6,7 +6,7 @@ RSpec.describe "Events", type: :system do
   end
 
   context "#Events management" do
-    it "Disables me to create new event" do
+    it "Doesn't create event due to missing sign in." do
       visit "/events/new"
   
       fill_in "Title", :with => "name"
