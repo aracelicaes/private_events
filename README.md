@@ -35,6 +35,63 @@ This project demonstrates a User Role system giving the web application and nati
 * Rubocop
 * Ruby Gems
 * Postgresql
+* Rspec
+* Capybara
+
+## Testing
+* Run from your terminal to test the project<pre><code> rspec </code></pre>
+<pre><code> 
+Attendance
+  #Associations
+    Attendance has a foreign_key from user_id
+    Attendance has foreign_key from event_id
+    Attendance belongs to User Class
+    Attendance belongs to Event Class
+
+Event
+  #Validations
+    Event is valid with all attributes
+    Event is invalid due to empty attributes
+    Event is invalid due to empty title
+    Event is invalid due to empty date
+    Event is invalid due to empty creator
+  #Associations
+    Event has a foreign_key from user id
+    Event has many attendances
+    Event has many attendees through attendances w/user source
+    Event does not belong to attendances
+    Event does not belong to attendee
+
+User
+  #Validations
+    Valid User with all atributes
+    Invalid user due to nil name
+    Invalid user due to nil username
+    Invalid user due to short username
+    Invalid user due to long username
+  #Associations
+    user has many events
+    user has many attendances
+    user has many attended_events
+    user does not belongs to events
+    user does not belongs to attendances
+    User does not belong to attended_events
+
+Events
+  #Events management
+    Doesn't create event due to missing sign in.
+
+Sessions
+  Logs me in
+  Logs me out
+  Fails Login Due to Wrong Username
+  Not Logged in so Finds Login Button
+
+Users
+  #Authentication
+    enables me to create new user
+    disable me to create new user
+</code></pre>
 
 ## Ruby Gems used in this project
 
@@ -43,7 +100,7 @@ This project demonstrates a User Role system giving the web application and nati
 
 <!-- CONTACT -->
 # Authors
-👤 **Ara Camarillo**https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations?ref=lnav
+👤 **Ara Camarillo**
 
 - Github: [aracelicaes](https://github.com/aracelicaes)
 - Twitter: [@Ara_CE_93](https://twitter.com/Ara_CE_93)

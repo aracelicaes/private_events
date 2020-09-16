@@ -8,12 +8,11 @@ module UserSessionsHelper
   end
 
   def current_user?
-    if session[:name]
-      @current_user = User.find_by(username: session[:username])
-      true
-    else
-      @current_user = nil
+    @current_user = User.find_by(username: session[:username])
+    if @current_user.nil?
       false
+    else
+      true
     end
   end
 end

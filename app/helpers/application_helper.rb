@@ -11,7 +11,6 @@ module ApplicationHelper
 
   def login_helper
     if current_user?
-
       content_tag(:div, class: 'd-flex flex-column mt-1') do
         link_to new_event_path, class: 'd-flex flex-column align-items-center button is-info ml-3 mr-3' do
           content_tag(:i, class: 'fa fa-plus events pt-1') do
