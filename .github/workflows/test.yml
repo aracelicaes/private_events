@@ -14,7 +14,6 @@ jobs:
       - name: Setup RSpec
         run: |
           gem install bundler:2.1.2
-          bundle update --bundler
           [ -f Gemfile ] && bundle --deployment
           gem install --no-document rspec:'~>3.0'
           
