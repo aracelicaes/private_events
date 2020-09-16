@@ -10,10 +10,10 @@ module EventsHelper
             link_to image_tag('event.jpeg', alt: 'Logo', class: 'w-100'), event
           end +
             content_tag(:p, class: 'orange event_title') do
-              "#{event.date}"
+              event.date.to_s
             end +
             content_tag(:p, class: 'event_title') do
-              "#{event.title}"
+              event.title.to_s
             end
         end
     end

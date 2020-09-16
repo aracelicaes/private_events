@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   describe '#Validations' do
-
     it 'Valid User with all atributes' do
       expect(User.new(name: 'name', username: 'username')).to be_valid
     end
@@ -25,7 +23,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context "#Associations" do
+  context '#Associations' do
     it 'user has many events' do
       association = User.reflect_on_association(:events)
       expect(association.macro).to eq(:has_many)
@@ -53,7 +51,5 @@ RSpec.describe User, type: :model do
       association = User.reflect_on_association(:attended_events)
       expect(association.macro).to_not eq(:belongs_to)
     end
-
   end
-  
 end

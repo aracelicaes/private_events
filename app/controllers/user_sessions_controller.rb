@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
     else
       session[:name] = user.name
       session[:username] = user.username
-      redirect_to(:users, notice: "Sign In Succesful.")
+      redirect_to(:users, notice: 'Sign In Succesful.')
     end
   end
 
