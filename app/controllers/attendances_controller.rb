@@ -7,7 +7,6 @@ class AttendancesController < ApplicationController
   end
 
   def attend
-    
     respond_to do |format|
       if current_user?
         @event.attendances.build(user_id: current_user.id)
