@@ -8,6 +8,6 @@ class Event < ApplicationRecord
   has_many :attendances
   has_many :attendees, through: :attendances, source: :user
 
-  scope :upcoming_events, -> { where('date >= ?', Time.zone.now) }
-  scope :past_events, -> { where('date < ?', Time.zone.now) }
+  scope :upcoming_events, -> { where('date >= ?', Date.today) }
+  scope :past_events, -> { where('date < ?', Date.today) }
 end

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   include UserSessionsHelper
-  before_action :set_user, only: %i[show edit]
+  before_action :set_user, only: :show
 
   def index
     @users = User.all
@@ -8,9 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find(params[:id])
-    @user_events = user.events unless user.nil?
-    @user_attended = user.attended_events
+    @user_events = @user.events unless @user.nil?
+    @user_attended = @user.attended_events
     @upcoming_events = @user_attended.upcoming_events
     @past_events = @user_attended.past_events
   end

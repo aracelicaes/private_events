@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   include UserSessionsHelper
-  before_action :set_event, only: %i[show edit update destroy]
+  before_action :set_event, only: :show
 
   def index
     @events = Event.all
@@ -9,7 +9,6 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
     @event_attendees = @event.attendees
   end
 

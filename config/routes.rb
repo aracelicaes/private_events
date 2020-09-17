@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :attendances
-  resources :events
-  resources :users
+  resources :attendances, except: [:edit, :destroy, :update]
+  resources :events, except: [:edit, :destroy, :update]
+  resources :users, except: [:edit, :destroy, :update]
   root to: 'users#index'
 
   resources :user_sessions, only: [:new, :create, :destroy]

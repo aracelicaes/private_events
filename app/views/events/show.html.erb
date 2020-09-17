@@ -1,7 +1,5 @@
 <% content_for :section do %>
   <div class="d-flex">
-    <%= link_to 'Edit', edit_event_path(@event), class: 'fa fa-pencil purple event_title mr-2' %>
-    <br>
     <%= link_to 'Back', root_path, class: 'fa fa-arrow-left purple event_title mr-2' %>
     <br>
     <%= link_to 'Attend', "/attend/#{@event.id}", class: 'fa fa-check purple event_title mr-2' %>
