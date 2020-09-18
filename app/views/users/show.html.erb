@@ -1,0 +1,41 @@
+<% content_for :section do %>
+
+  <%= link_to 'Back', users_path, class: 'blue event_title' %>
+  <h3 class="orange">
+    <strong>Name:</strong>
+    <%= @user.name %>
+  </h3>
+
+  <h3 class="orange">
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </h3>
+
+  <h3>
+    All Events Created By:
+    <%= @user.name %>
+  </h3>
+
+  <div class="row">
+    <%= displaylist(@user_events)%>
+  </div>
+
+  <h3 class="mt-2 mb-2">
+    All Upcoming events Reserved By:
+    <%= @user.name %>
+  </h3>
+
+  <div class="row">
+    <%= displaylist(@upcoming_events)%>
+  </div>
+
+  <h3 class="mt-2 mb-2">
+    All past events Reserved By:
+    <%= @user.name %>
+  </h3>
+
+  <div class="row">
+    <%= displaylist(@past_events)%>
+  </div>
+
+<% end %>

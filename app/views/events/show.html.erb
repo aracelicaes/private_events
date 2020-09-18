@@ -1,0 +1,36 @@
+<% content_for :section do %>
+  <div class="d-flex">
+    <%= link_to 'Back', root_path, class: 'fa fa-arrow-left purple event_title mr-2' %>
+    <br>
+    <%= link_to 'Attend', "/attend/#{@event.id}", class: 'fa fa-check purple event_title mr-2' %>
+  </div>
+  <br>
+  <br>
+  <h3>
+    <strong>Title:</strong>
+    <%= @event.title %>
+  </h3>
+
+  <h3>
+    <strong>Date:</strong>
+    <%= @event.date %>
+  </h3>
+
+  <h3>
+    <strong>Location:</strong>
+    <%= @event.location %>
+  </h3>
+
+  <h3>
+    <strong>Description:</strong>
+    <%= @event.description %>
+  </h3>
+  <br>
+  <br>
+  <h2 class="orange">Attendees:</h2>
+  <div class="row">
+
+    <%= displaylist_user(@event_attendees) %>
+  </div>
+
+<% end %>

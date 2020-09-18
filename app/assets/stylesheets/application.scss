@@ -1,0 +1,116 @@
+@import "bootstrap";
+@import "font-awesome";
+
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 700;
+}
+
+body,
+p,
+ol,
+ul,
+td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.navcolor {
+  background-color: #1e0a3c;
+}
+
+.logo,
+.bars {
+  color: orangered;
+  font-size: 24px;
+}
+
+.orange {
+  color: orangered !important;
+}
+
+.blue {
+  color: blue !important;
+}
+
+.purple {
+  color: purple !important;
+}
+
+.event_title {
+  color: rgb(15, 15, 15);
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+}
+
+.events {
+  color: white;
+  font-size: 28px;
+}
+
+small {
+  color: white;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+#notice {
+  color: green;
+}
+
+#notice_alert {
+  color: red;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+.content {
+  margin: 2% auto;
+  max-width: 75%;
+}

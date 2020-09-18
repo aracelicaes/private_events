@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PrivateEvents</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav id="navigation" class="navbar navbar-expand-lg navbar-light navcolor">      
+      <div class = "logo">
+        <%= link_to 'eventoprivato', root_path, class: "logo" %>
+      </div>
+      
+      <!-- Toggle Menu -->
+      <div class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars bars"></i>
+      </div>
+
+      <!-- End Toggle Menu -->
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+        <!-- New Event Icon -->
+          <%= login_helper %>
+        </div>
+      </div>
+    </nav>
+    <%= display_propper_flash %>
+    <section class="content">
+    <%= yield :section %>
+    </section>
+    <%= yield %>
+    
+  </body>
+</html>
