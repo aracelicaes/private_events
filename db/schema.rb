@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_18_160610) do
+ActiveRecord::Schema.define(version: 2020_09_18_213039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2020_09_18_160610) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "title"
-    t.bigint "user_id"
     t.integer "creator_id"
     t.index ["creator_id"], name: "index_events_on_creator_id"
   end
@@ -46,5 +45,4 @@ ActiveRecord::Schema.define(version: 2020_09_18_160610) do
 
   add_foreign_key "attendances", "events"
   add_foreign_key "attendances", "users"
-  add_foreign_key "events", "users"
 end
